@@ -78,6 +78,7 @@ def submit_attendance():
     else:
         return "Invalid student number. Please try again.", 400
 
+# Vercel automatically calls the Flask app
 if __name__ == '__main__':
     # Initialize CSV file if it doesn't exist
     try:
@@ -88,5 +89,4 @@ if __name__ == '__main__':
             writer = csv.writer(file)
             writer.writerow(['Student Number', 'Time Submitted'])  # Column headers
 
-    # Run Flask application
-    app.run(debug=True)
+    # Vercel manages the Flask app startup
